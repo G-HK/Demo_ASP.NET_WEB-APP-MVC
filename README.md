@@ -95,6 +95,18 @@ I authorize the admin folder where the razor pages where used. the authorization
  ![image](https://user-images.githubusercontent.com/48015605/128927127-5f387f87-ad0a-4360-a449-489ee78c3129.png)
 
 
+###
+  Image
+  
+  [HandBook Creation Page]
+  ![image](https://user-images.githubusercontent.com/48015605/128932670-06fb13bc-ad9e-43d2-b217-3f12633e27c5.png)
+
+  The Image for the handbook is saved in the database in a Base64 format that is converted to a string.
+  
+  
+  
+  [HandBook Index Page ]
+  ![image](https://user-images.githubusercontent.com/48015605/128932272-6d52e3bd-24ce-4014-9535-5e1603f4295c.png)
 
 
 
