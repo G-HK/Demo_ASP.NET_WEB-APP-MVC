@@ -1,0 +1,53 @@
+﻿@model HSPXL2.Entities.Handboek
+
+@{
+    ViewData["Title"] = $"Details - {Model.HandboekID}";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>
+        @Html.DisplayFor(model => model.Title)
+    </h4>
+    <hr />
+    <div class="row">
+        <div class="col">
+            @{
+                var imgSrc = String.Format("data:image/gif;base64,{0}", Model.Afbeelding);
+            }
+            <img src="@imgSrc" class="img-fluid" width="550" height="450" />
+        </div>
+        <div class="col">
+
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.KostPrijs)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.KostPrijs)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.UitgiftDatum)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.UitgiftDatum)
+                </dd>
+            </dl>
+
+        </div>
+    </div>
+    <div>
+        @*<a asp-action="Edit" asp-route-id="@Model.HandboekID">Edit</a> |*@
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+
+</div>
+

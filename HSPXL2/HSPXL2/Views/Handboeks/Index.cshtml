@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HSPXL2.Entities.Handboek>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Afbeelding)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KostPrijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UitgiftDatum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", item.Afbeelding);
+                    }
+                    <img src="@imgSrc" class="img-fluid" width="100" height="150" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    <currency Currency="@item.KostPrijs"></currency>
+                </td>
+                <td>
+                    @item.UitgiftDatum.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.HandboekID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.HandboekID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.HandboekID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
