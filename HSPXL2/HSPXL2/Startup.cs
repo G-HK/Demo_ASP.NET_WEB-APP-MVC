@@ -62,21 +62,18 @@ namespace HSPXL2
 
             services.AddSession();
 
-            services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/User/unauthorizedUser");
+          //  services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/User/unauthorizedUser");
 
 
-            services.AddAuthorization(options => {
-
-                //options.AddPolicy("RequireAdmin",
-                //    policy => policy.RequireClaim("Admin"));
-
-                //options.AddPolicy("UserAccess", policy =>
-                //policy.RequireAssertion(context => context.User.IsInRole("Admin") || context.User.IsInRole("Teacher") ) );
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("UserAccess", policy =>
+                policy.RequireAssertion(context => context.User.IsInRole("Admin")));
             });
 
             services.AddRazorPages(opts =>
             {
-                //opts.Conventions.AuthorizeFolder("/Admin", "RequireAdministratorRole");
+                opts.Conventions.AuthorizeFolder("/Admin", "UserAccess");
                 //opts.Conventions.AllowAnonymousToPage("/Admin/Users");
             });
         }
@@ -97,12 +94,13 @@ namespace HSPXL2
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+            
+            app.UseAuthentication();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

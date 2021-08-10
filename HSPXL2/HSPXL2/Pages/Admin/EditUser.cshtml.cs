@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HSPXL2.Pages.Admin
 {
-    //[Authorize(Roles = "Admin")]
+   // [Authorize(Policy = "RequireAdmin")]
     public class EditUserModel : PageModel
     {
         public UserManager<IdentityUser> UserManager;

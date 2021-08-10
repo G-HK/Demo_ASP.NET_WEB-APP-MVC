@@ -51,11 +51,7 @@ namespace HSPXL2.Controllers
 
                     if ((await _signInManager.PasswordSignInAsync(user, loginModel.Password, false, false)).Succeeded)
                     {
-                        //  var role = _userManager.GetRolesAsync(user);
-                        if (user.NormalizedUserName == "ADMIN")
-                        {
-                            return RedirectToAction("Index", "Home");
-                        }
+                        return RedirectToAction("Index", "Home");
                     }
                 }
             }

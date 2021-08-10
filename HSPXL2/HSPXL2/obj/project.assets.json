@@ -9007,11 +9007,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\h_kad\\Documenten\\Project\\HSPXL2\\HSPXL2\\HSPXL2.csproj",
+      "projectUniqueName": "C:\\Users\\h_kad\\Documenten\\GitHub\\Demo_ASP.NET_WEB-APP-MVC\\HSPXL2\\HSPXL2\\HSPXL2.csproj",
       "projectName": "HSPXL2",
-      "projectPath": "C:\\Users\\h_kad\\Documenten\\Project\\HSPXL2\\HSPXL2\\HSPXL2.csproj",
+      "projectPath": "C:\\Users\\h_kad\\Documenten\\GitHub\\Demo_ASP.NET_WEB-APP-MVC\\HSPXL2\\HSPXL2\\HSPXL2.csproj",
       "packagesPath": "C:\\Users\\h_kad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\h_kad\\Documenten\\Project\\HSPXL2\\HSPXL2\\obj\\",
+      "outputPath": "C:\\Users\\h_kad\\Documenten\\GitHub\\Demo_ASP.NET_WEB-APP-MVC\\HSPXL2\\HSPXL2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uWsOKGsTT4uT2jTo1PqkoQDh5df9Ect3DNmTFX5y6CDi3cL+q8f0VJt0o/8X3SkIGRRFO5Qa7y6jEI3qQyvrBw==",
+  "dgSpecHash": "vRwcLPKikrDC/6p/ZWUJxwHWCVivHs1RVfJ5Nt1z2leS2cx+VbQqM48ccMui32kpjuRuYyHz4nEetQae6Vm8SA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\h_kad\\Documenten\\Project\\HSPXL2\\HSPXL2\\HSPXL2.csproj",
+  "projectFilePath": "C:\\Users\\h_kad\\Documenten\\GitHub\\Demo_ASP.NET_WEB-APP-MVC\\HSPXL2\\HSPXL2\\HSPXL2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\h_kad\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\h_kad\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

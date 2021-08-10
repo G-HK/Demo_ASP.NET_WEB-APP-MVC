@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace HSPXL2.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     public class StudentsController : Controller
     {
         private readonly IStudentRepository _studentRepo;
