@@ -16,7 +16,7 @@
             @{
                 var imgSrc = String.Format("data:image/gif;base64,{0}", Model.Afbeelding);
             }
-            <img src="@imgSrc" class="img-fluid" width="550" height="450" />
+            <img src="@imgSrc" class="img-fluid" style="width:300px; height:450px"  />
         </div>
         <div class="col">
 
@@ -31,7 +31,7 @@
                     @Html.DisplayNameFor(model => model.KostPrijs)
                 </dt>
                 <dd class="col-sm-9">
-                    @Html.DisplayFor(model => model.KostPrijs)
+                    <currency Currency="@Model.KostPrijs"></currency>
                 </dd>
                 <dt class="col-sm-3">
                     @Html.DisplayNameFor(model => model.UitgiftDatum)

@@ -10,6 +10,8 @@ using HSPXL2.Entities;
 using HSPXL2.Repositories;
 using System.Collections;
 using Microsoft.AspNetCore.Authorization;
+using HSPXL2.Models;
+using AutoMapper;
 
 namespace HSPXL2.Controllers
 {
@@ -20,12 +22,14 @@ namespace HSPXL2.Controllers
         private readonly IInschrijvingRepository _inschrijvingRepository;
         private readonly IStudentRepository _studentRepo;
         private readonly ICursusRepository _cursusRepository;
+        private readonly IMapper _mapper;
 
-        public InschrijvingsController(ICursusRepository cursusRepository, IInschrijvingRepository inschrijvingRepository, IStudentRepository studentRepo)
+        public InschrijvingsController(IMapper mapper , ICursusRepository cursusRepository, IInschrijvingRepository inschrijvingRepository, IStudentRepository studentRepo)
         {
             _studentRepo = studentRepo;
             _inschrijvingRepository = inschrijvingRepository;
             _cursusRepository = cursusRepository;
+            _mapper = mapper;
 
         }
 
@@ -84,12 +88,18 @@ namespace HSPXL2.Controllers
                 return NotFound();
             }
 
-            var inschrijving = await _inschrijvingRepository.Inschrijving((int)id);
+            Inschrijving inschrijving = await _inschrijvingRepository.Inschrijving((int)id);
+
+            InschrijvingDto inschrijvingDto = _mapper.Map<InschrijvingDto>(inschrijving);
+            
+            inschrijvingDto.CursusList = new SelectList(_cursusRepository.Cursussen(), "CursusID", "CursusName");
+            inschrijvingDto.StudentList = new SelectList(_studentRepo.Students(), "StudentID", "Naam");
+
             if (inschrijving == null)
             {
                 return NotFound();
             }
-            return View(inschrijving);
+            return View(inschrijvingDto);
         }
 
         // POST: Inschrijvings/Edit/5
@@ -97,7 +107,7 @@ namespace HSPXL2.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("InschrijvingID,StudentID,CursusID")] Inschrijving inschrijving)
+        public IActionResult Edit(int id, [Bind("InschrijvingID,StudentID,CursusID")] InschrijvingDto inschrijving)
         {
             
 
@@ -105,7 +115,10 @@ namespace HSPXL2.Controllers
             {
                 try
                 {
-                    _inschrijvingRepository.Update(inschrijving);
+
+                    Inschrijving inschrijving1 = _mapper.Map<Inschrijving>(inschrijving);
+                    _inschrijvingRepository.Update(inschrijving1);
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {

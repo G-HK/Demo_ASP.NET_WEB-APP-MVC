@@ -62,7 +62,7 @@ namespace HSPXL2
 
             services.AddSession();
 
-          //  services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/User/unauthorizedUser");
+            services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/User/unauthorizedUser");
 
 
             services.AddAuthorization(options =>
