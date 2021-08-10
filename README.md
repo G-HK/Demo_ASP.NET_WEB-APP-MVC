@@ -83,6 +83,12 @@ I authorize the admin folder where the razor pages where used. the authorization
   
   ![image](https://user-images.githubusercontent.com/48015605/128928496-2c66990c-8da7-497e-a84b-264057ec8e4f.png)
 
+  (P.S. if you still have a problem with role or policy based authorization Check you project settings if the "Enable Anonymous Authentication" is Checked)
+  
+  [Project Setting]
+  
+  ![image](https://user-images.githubusercontent.com/48015605/128931484-d4f3bac2-a4cf-4e88-bc15-49ca567a9e8a.png)
+
 
  [User List Page]
   
