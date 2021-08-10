@@ -68,11 +68,13 @@ Code: {
 I did also used razor pages to show a List about every user. These pages can only be access by a user that has the Admin Role.
 
 [Code for authorizing razor pages]
+  
   ![image](https://user-images.githubusercontent.com/48015605/128927750-bd38411b-1394-4228-92fd-cfe26b6e5e63.png)
 
 I authorize the admin folder where the razor pages where used. the authorization is done by using Policy.
 
 [Code for Authorization Policy]
+  
   ![image](https://user-images.githubusercontent.com/48015605/128928279-cc6de5c6-e3c2-4f36-874b-d5d4795e659d.png)
 
 #Warning#
