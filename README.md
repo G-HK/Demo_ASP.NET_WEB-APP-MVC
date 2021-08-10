@@ -78,6 +78,7 @@ I authorize the admin folder where the razor pages where used. the authorization
   ![image](https://user-images.githubusercontent.com/48015605/128928279-cc6de5c6-e3c2-4f36-874b-d5d4795e659d.png)
 
 #Warning#
+  
   The Role and Policy based authorization will not work if you did correctly organize the "app.UseAuthozization();" between the "app.UseRouting();" and "app.UseEndpionts"
   like this.
   
